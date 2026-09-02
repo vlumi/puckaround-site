@@ -87,52 +87,6 @@ a:hover { color: var(--text); }
 }
 .hero-soon { color: var(--text-soft); font-weight: 600; }
 
-/* The table, as ornament: two goal mouths and a puck mid-rally. */
-.mini-rink {
-  position: relative;
-  width: min(240px, 60vw);
-  height: 150px;
-  margin: 0 auto;
-  border: 2px solid rgba(153, 184, 242, .55);
-  border-radius: 18px;
-  background:
-    linear-gradient(rgba(153, 184, 242, .05) 1px, transparent 1px) 0 0 / 100% 25px,
-    linear-gradient(90deg, rgba(153, 184, 242, .05) 1px, transparent 1px) 0 0 / 25px 100%,
-    var(--ice);
-  box-shadow: 0 0 24px rgba(153, 184, 242, .12);
-}
-.mini-rink .goal {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 34%;
-  height: 4px;
-  border-radius: 2px;
-}
-.goal-cyan { top: -3px; background: var(--cyan); box-shadow: 0 0 14px var(--cyan); }
-.goal-magenta { bottom: -3px; background: var(--magenta); box-shadow: 0 0 14px var(--magenta); }
-.mini-rink .puck {
-  position: absolute;
-  top: 34%;
-  left: 58%;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: #f7f5ff;
-  box-shadow: 0 0 18px rgba(247, 245, 255, .9);
-}
-.mini-rink .trail {
-  position: absolute;
-  top: 42%;
-  left: 30%;
-  width: 34%;
-  height: 12px;
-  border-radius: 6px;
-  transform: rotate(38deg);
-  background: linear-gradient(90deg, transparent, rgba(247, 245, 255, .35));
-  filter: blur(3px);
-}
-
 /* ---- features ---- */
 .features {
   display: grid;
