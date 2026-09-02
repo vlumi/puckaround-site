@@ -1,0 +1,202 @@
+/* Puck Around — marketing site for the game.
+   The app's own language: the neon cabinet. A violet-black ground, the two
+   seat colors held the game's way up — magenta down, cyan up — and glow used
+   sparingly. Self-contained: no external fonts or assets, no JS. */
+
+:root {
+  --ground: #0a0612;       /* the cabinet */
+  --ice: #120b1f;          /* the rink surface / raised card */
+  --text: #e8ecf8;
+  --text-soft: #9aa6c6;
+  --ink: #99b8f2;          /* the rink's neutral furniture */
+  --cyan: #21e0ff;
+  --magenta: #ff2e78;
+  --line: #241b38;
+  --max: 60rem;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--text);
+  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
+}
+
+h1, h2, h3, .brand {
+  font-family: ui-rounded, -apple-system, BlinkMacSystemFont, "Segoe UI",
+               sans-serif;
+}
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.25rem; }
+
+a { color: var(--cyan); }
+a:hover { color: var(--text); }
+
+/* ---- header ---- */
+.site-head {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 1.25rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.brand {
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: .14em;
+  font-size: .95rem;
+}
+.brand-puck { color: var(--cyan); text-shadow: 0 0 12px rgba(33, 224, 255, .5); }
+.brand-around { color: var(--magenta); text-shadow: 0 0 12px rgba(255, 46, 120, .5); margin-left: .45em; }
+.site-nav a {
+  color: var(--text-soft);
+  text-decoration: none;
+  margin-left: 1.1rem;
+  font-size: .95rem;
+}
+.site-nav a:hover { color: var(--text); }
+
+/* ---- hero ---- */
+.hero { text-align: center; padding: 2.5rem 0 3rem; }
+.hero-icon {
+  border-radius: 22.4%;
+  box-shadow: 0 0 44px rgba(33, 224, 255, .18), 0 10px 30px rgba(0, 0, 0, .5);
+}
+.hero-title {
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 800;
+  letter-spacing: .1em;
+  margin: 1rem 0 .25rem;
+  text-wrap: balance;
+}
+.t-puck { color: var(--cyan); text-shadow: 0 0 22px rgba(33, 224, 255, .55); }
+.t-around { color: var(--magenta); text-shadow: 0 0 22px rgba(255, 46, 120, .55); }
+.hero-tagline { color: var(--text-soft); font-size: 1.15rem; margin: 0 0 1.8rem; }
+.hero-lede {
+  max-width: 38rem;
+  margin: 1.8rem auto 1.4rem;
+  color: var(--text);
+}
+.hero-soon { color: var(--text-soft); font-weight: 600; }
+
+/* The table, as ornament: two goal mouths and a puck mid-rally. */
+.mini-rink {
+  position: relative;
+  width: min(240px, 60vw);
+  height: 150px;
+  margin: 0 auto;
+  border: 2px solid rgba(153, 184, 242, .55);
+  border-radius: 18px;
+  background:
+    linear-gradient(rgba(153, 184, 242, .05) 1px, transparent 1px) 0 0 / 100% 25px,
+    linear-gradient(90deg, rgba(153, 184, 242, .05) 1px, transparent 1px) 0 0 / 25px 100%,
+    var(--ice);
+  box-shadow: 0 0 24px rgba(153, 184, 242, .12);
+}
+.mini-rink .goal {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 34%;
+  height: 4px;
+  border-radius: 2px;
+}
+.goal-cyan { top: -3px; background: var(--cyan); box-shadow: 0 0 14px var(--cyan); }
+.goal-magenta { bottom: -3px; background: var(--magenta); box-shadow: 0 0 14px var(--magenta); }
+.mini-rink .puck {
+  position: absolute;
+  top: 34%;
+  left: 58%;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #f7f5ff;
+  box-shadow: 0 0 18px rgba(247, 245, 255, .9);
+}
+.mini-rink .trail {
+  position: absolute;
+  top: 42%;
+  left: 30%;
+  width: 34%;
+  height: 12px;
+  border-radius: 6px;
+  transform: rotate(38deg);
+  background: linear-gradient(90deg, transparent, rgba(247, 245, 255, .35));
+  filter: blur(3px);
+}
+
+/* ---- features ---- */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 1rem;
+  padding-bottom: 2rem;
+}
+.feature {
+  background: var(--ice);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.25rem 1.4rem;
+}
+.feature h2 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin: 0 0 .5rem;
+  color: var(--text);
+}
+.feature p { margin: 0; color: var(--text-soft); font-size: .97rem; }
+
+/* ---- closing ---- */
+.closing { text-align: center; padding: 1.5rem 0 3rem; color: var(--text-soft); }
+.closing .fine { font-size: .9rem; }
+
+/* ---- prose pages (support, privacy) ---- */
+.prose { max-width: 44rem; margin: 0 auto; padding: 2rem 0 4rem; }
+.prose h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: .02em;
+}
+.prose h2 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-top: 2.2rem;
+  color: var(--text);
+}
+.prose p, .prose li { color: var(--text-soft); }
+.prose strong { color: var(--text); }
+.prose code {
+  background: var(--ice);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: .1em .35em;
+  font-size: .92em;
+}
+
+/* ---- footer ---- */
+.site-foot {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 2.5rem;
+  border-top: 1px solid var(--line);
+}
+.site-foot nav a {
+  color: var(--text-soft);
+  text-decoration: none;
+  margin-right: 1.1rem;
+  font-size: .92rem;
+}
+.site-foot nav a:hover { color: var(--text); }
+.site-foot .fine { color: var(--text-soft); font-size: .85rem; opacity: .8; }
+
+@media (max-width: 480px) {
+  .site-head { justify-content: center; }
+}

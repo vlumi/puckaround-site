@@ -1,0 +1,26 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{ $title := .Title }}
+{{ $siteTitle := .Site.Title }}
+<title>{{ if .IsHome }}{{ $siteTitle }} — {{ .Site.Params.tagline }}{{ else }}{{ $title }} · {{ $siteTitle }}{{ end }}</title>
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.tagline }}{{ end }}">
+
+{{/* Compiled + fingerprinted so nginx can cache it hard. */}}
+{{ with resources.Get "css/main.css" }}
+  {{ $css := . | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+{{ end }}
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+{{/* Matches the app's violet-black cabinet ground, so the browser chrome doesn't clash. */}}
+<meta name="theme-color" content="#0a0612">
+
+{{/* Open Graph / social preview */}}
+<meta property="og:title" content="{{ $siteTitle }}">
+<meta property="og:description" content="{{ .Site.Params.tagline }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:image" content="{{ "appicon.png" | absURL }}">

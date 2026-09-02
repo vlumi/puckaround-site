@@ -1,0 +1,80 @@
+{{ define "main" }}
+  <section class="hero">
+    <img class="hero-icon" src="/appicon.png" width="128" height="128"
+         alt="Puck Around app icon">
+
+    <h1 class="hero-title"><span class="t-puck">PUCK</span> <span class="t-around">AROUND</span></h1>
+    <p class="hero-tagline">{{ .Site.Params.tagline }}</p>
+
+    {{/* The table, drawn in CSS — decoration, not information. */}}
+    <div class="mini-rink" aria-hidden="true">
+      <span class="goal goal-cyan"></span>
+      <span class="trail"></span>
+      <span class="puck"></span>
+      <span class="goal goal-magenta"></span>
+    </div>
+
+    <p class="hero-lede">
+      The device is the table. Lay a phone or an iPad flat, grab an end each,
+      and play — mallets under your thumbs, a white-hot puck between you,
+      first to seven. No accounts, no matchmaking, no other screen:
+      <strong>the people in the room are the whole game</strong>.
+    </p>
+    {{ with .Site.Params.appStoreURL }}
+      <a class="appstore-badge" href="{{ . }}"><img src="/img/app-store-badge.svg" alt="Download on the App Store" width="150" height="50"></a>
+    {{ else }}
+      <p class="hero-soon">Coming to the App Store.</p>
+    {{ end }}
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <h2>One screen, up to four hands</h2>
+      <p>Singles head-to-head, doubles with a lane each, or an uneven one
+      against two — the goal widens for the better-staffed side. Grab your
+      mallet to ready up; the force field bursts and it's a scramble.</p>
+    </div>
+    <div class="feature">
+      <h2>Pucks with character</h2>
+      <p>Round, square, or triangular — the shaped ones tumble, catch the
+      boards, and spin off at angles the round one never would. Fly up to
+      three at once, make the side walls wrap like portals, or leave any of
+      it to the <em>“?”</em> and find out at the faceoff.</p>
+    </div>
+    <div class="feature">
+      <h2>Tournament night</h2>
+      <p>Winner stays, knockout brackets for up to 32, or a league season
+      with real tie-breakers. Names are remembered as one-tap chips — no
+      profiles, no stats — and every player wears their own neon: mallet,
+      goal, and score in their color.</p>
+    </div>
+    <div class="feature">
+      <h2>Practice against the machine</h2>
+      <p>A mallet on a fixed figure-eight sweep defends the far goal — a
+      drill target, not an AI. It never aims, but its deflections count, so
+      careless shots come straight back at you.</p>
+    </div>
+    <div class="feature">
+      <h2>An arcade in the corner</h2>
+      <p>Three solo cabinets on the same physics: a bumper field, a brick
+      wall that racks back harder every time you break through, and a
+      survival table that never stops feeding pucks. Ten-line hiscore boards,
+      signed with one tap.</p>
+    </div>
+    <div class="feature">
+      <h2>Nothing leaves the device</h2>
+      <p>No server, no accounts, no analytics, no ads — the app makes no
+      network connections at all. Scores and remembered names live on the
+      device and nowhere else.</p>
+    </div>
+  </section>
+
+  <section class="closing">
+    <p>Sound and haptics off the game's own physics, a neon cabinet look,
+    and a table that fills the screen whichever way you hold it.</p>
+    <p class="fine">
+      Free, no ads, no accounts, no tracking. Open source under the MIT
+      licence at <a href="{{ .Site.Params.githubURL }}">github.com/vlumi/puckaround</a>.
+    </p>
+  </section>
+{{ end }}

@@ -1,0 +1,25 @@
+baseURL: "https://puckaround.misaki.fi/"
+locale: "en-US"
+title: "Puck Around"
+
+# Clean URLs; no taxonomies needed for a small marketing/support site.
+disableKinds:
+  - taxonomy
+  - term
+  - RSS
+
+params:
+  tagline: "Neon air hockey for the people around one screen."
+  # Empty until the app is on sale — the template shows "coming soon" instead.
+  appStoreURL: ""
+  supportEmail: "ville@misaki.fi"
+  githubURL: "https://github.com/vlumi/puckaround"
+
+menu:
+  main:
+    - name: "Support"
+      pageRef: "/support"
+      weight: 10
+    - name: "Privacy"
+      pageRef: "/privacy"
+      weight: 20

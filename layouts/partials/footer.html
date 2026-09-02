@@ -1,0 +1,9 @@
+<footer class="site-foot">
+  <nav>
+    <a href="/">Home</a>
+    <a href="/support/">Support</a>
+    <a href="/privacy/">Privacy</a>
+    {{ with .Site.Params.githubURL }}<a href="{{ . }}">Source</a>{{ end }}
+  </nav>
+  <p class="fine">© {{ now.Year }} Ville Misaki. A hobby project — no ads, no accounts, nothing tracked.</p>
+</footer>
