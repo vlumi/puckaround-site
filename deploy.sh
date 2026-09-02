@@ -12,7 +12,7 @@ set -euo pipefail
 
 cd "$(dirname "$0")"
 
-WEBROOT="${WEBROOT:-/var/www/puckaround.misaki.fi}"
+WEBROOT="${WEBROOT:-/var/www/puck}"
 HUGO_VERSION="$(tr -d '[:space:]' < .hugoversion)"
 
 # --- ensure the pinned Hugo Extended is available ---------------------------

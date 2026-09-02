@@ -1,4 +1,4 @@
-# puckaround.misaki.fi
+# puck.misaki.fi
 
 The website for **Puck Around** — neon air hockey for the people around one
 iPhone or iPad. Landing, support, and privacy pages.
@@ -27,13 +27,13 @@ hugo               # one-off build into ./public
 ## Deploy
 
 Served by nginx over HTTPS (Let's Encrypt / certbot) on the host for
-`puckaround.misaki.fi`. [`deploy.sh`](deploy.sh) does it in one step: it
+`puck.misaki.fi`. [`deploy.sh`](deploy.sh) does it in one step: it
 fetches the **pinned** Hugo Extended (cached per-version under
 `~/.local/share/puckaround-hugo`, no root, never the system Hugo), pulls, and
 builds straight into the web root.
 
 ```sh
-./deploy.sh                          # pull, build, publish to /var/www/puckaround.misaki.fi
+./deploy.sh                          # pull, build, publish to /var/www/puck
 WEBROOT=/some/other/path ./deploy.sh # override the publish dir
 ./deploy.sh --no-pull                # build the working tree as-is
 ```

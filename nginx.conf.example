@@ -1,7 +1,7 @@
-# Example nginx server block for puckaround.misaki.fi.
+# Example nginx server block for puck.misaki.fi.
 #
 # Start HTTP-only (port 80) so certbot can complete the ACME challenge; then run
-#   sudo certbot --nginx -d puckaround.misaki.fi
+#   sudo certbot --nginx -d puck.misaki.fi
 # and certbot ADDS the `listen 443 ssl` block + the HTTP->HTTPS redirect for you.
 # Do NOT hand-write the 443 block.
 #
@@ -10,14 +10,14 @@
 #
 # `root` points at the web root ITSELF — deploy.sh builds straight into it
 # (--cleanDestinationDir), there is no `public/` subdir. Keep this in step with
-# WEBROOT in deploy.sh (default /var/www/puckaround.misaki.fi).
+# WEBROOT in deploy.sh (default /var/www/puck).
 
 server {
     listen 80;
     listen [::]:80;
-    server_name puckaround.misaki.fi;
+    server_name puck.misaki.fi;
 
-    root /var/www/puckaround.misaki.fi;
+    root /var/www/puck;
     index index.html;
 
     # Hugo builds 404.html at the web root.
