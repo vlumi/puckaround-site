@@ -42,10 +42,14 @@ WEBROOT=/some/other/path ./deploy.sh # override the publish dir
 
 ## Content
 
-Three pages, all small:
+Four pages, all small:
 
 - `layouts/index.html` — the landing page, written directly in the template
   since it's structure rather than prose.
+- `content/screenshots.md` — the gallery. Shots come from the app repo's
+  `make shots` capture tree, named identically (`rally-iphone.png`, …): drop
+  the PNGs into `assets/img/shots/` and Hugo resizes them at build time.
+  Until a capture lands, its slot renders a labelled placeholder.
 - `content/support.md` — the questions a couch game actually provokes.
 - `content/privacy.md` — mirrors
   [PRIVACY.md](https://github.com/vlumi/puckaround/blob/main/PRIVACY.md) in the

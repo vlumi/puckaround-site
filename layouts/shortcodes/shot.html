@@ -1,0 +1,24 @@
+{{- /* One app screenshot in the gallery. Sources live in assets/img/shots/ —
+       named exactly as the app repo's shots/ tree emits them (e.g.
+       rally-iphone.png), so publishing a capture is a straight copy — and Hugo
+       resizes them at build time (the store PNGs are up to 2064×2752, far
+       larger than the grid ever shows). Emits 480/960-wide WebP with an
+       srcset; falls back to a labelled placeholder until the PNG is dropped
+       in. Usage: {{< shot name="rally-iphone" caption="Mid-rally." >}} */ -}}
+{{- $name := .Get "name" -}}
+{{- $caption := .Get "caption" -}}
+{{- $src := resources.Get (printf "img/shots/%s.png" $name) -}}
+<figure class="shot">
+  {{- with $src }}
+  {{- $small := (.Resize "480x webp q80").RelPermalink -}}
+  {{- $large := (.Resize "960x webp q80").RelPermalink -}}
+  <img src="{{ $small }}" srcset="{{ $small }} 480w, {{ $large }} 960w"
+       sizes="(max-width: 640px) 90vw, 360px"
+       alt="{{ $caption }}" loading="lazy">
+  {{- else }}
+  <div class="shot-placeholder" role="img" aria-label="{{ $caption }} (screenshot pending)">
+    <span>{{ $name }}.png</span>
+  </div>
+  {{- end }}
+  <figcaption>{{ $caption }}</figcaption>
+</figure>
