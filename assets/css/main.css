@@ -135,6 +135,52 @@ a:hover { color: var(--text); }
   font-size: .92em;
 }
 
+/* ---- screenshots gallery ---- */
+.shot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.4rem;
+  margin: 1.8rem 0;
+}
+/* iPad shots are squarer — wider columns so they don't shrink to phone width. */
+.shot-grid--ipad {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+.shot {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+.shot img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  display: block;
+  background: var(--ice);
+}
+/* Until a capture lands: a dark pane in the shot's shape, filename inside.
+   The store shots are portrait — 1320×2868 on iPhone, 2064×2752 on iPad. */
+.shot-placeholder {
+  aspect-ratio: 1320 / 2868;
+  border: 2px dashed var(--line);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ice);
+  color: var(--text-soft);
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: .8rem;
+}
+.shot-grid--ipad .shot-placeholder { aspect-ratio: 2064 / 2752; }
+.shot figcaption {
+  font-size: .84rem;
+  color: var(--text-soft);
+  line-height: 1.4;
+}
+
 /* ---- footer ---- */
 .site-foot {
   max-width: var(--max);

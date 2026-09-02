@@ -17,6 +17,9 @@ params:
 
 menu:
   main:
+    - name: "Screenshots"
+      pageRef: "/screenshots"
+      weight: 5
     - name: "Support"
       pageRef: "/support"
       weight: 10

@@ -1,0 +1,8 @@
+{{- /* Wraps a set of {{< shot >}} calls in a responsive grid. An optional
+       first argument adds a modifier class, e.g. {{< shotgrid "ipad" >}} for
+       the squarer iPad shots that want wider columns (and a 3:4 placeholder
+       instead of the phone's tall one). */ -}}
+{{- $variant := .Get 0 -}}
+<div class="shot-grid{{ with $variant }} shot-grid--{{ . }}{{ end }}">
+  {{ .Inner }}
+</div>
