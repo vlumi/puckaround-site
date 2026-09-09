@@ -10,8 +10,9 @@ disableKinds:
 
 params:
   tagline: "Neon air hockey for the people around one screen."
-  # Empty until the app is on sale — the template shows "coming soon" instead.
-  appStoreURL: ""
+  # The region-free store link; emptying it swaps the badge back to the
+  # "coming soon" line.
+  appStoreURL: "https://apps.apple.com/app/id6805850544"
   supportEmail: "ville@misaki.fi"
   githubURL: "https://github.com/vlumi/puckaround"
 
