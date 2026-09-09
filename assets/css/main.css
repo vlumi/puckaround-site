@@ -86,6 +86,7 @@ a:hover { color: var(--text); }
   color: var(--text);
 }
 .hero-soon { color: var(--text-soft); font-weight: 600; }
+.appstore-badge { display: inline-block; margin-top: .4rem; }
 
 /* ---- features ---- */
 .features {
